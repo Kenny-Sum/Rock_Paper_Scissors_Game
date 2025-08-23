@@ -6,3 +6,9 @@ function getComputerChoice () {
     return list[random];
 }
 
+function getHumanChoice () {
+    let userInput = prompt("Which sign are you going to use? (rock, paper or scissors)?: ");
+    let result = userInput.toLowerCase();
+    return result;
+}
+
