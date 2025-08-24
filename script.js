@@ -35,3 +35,22 @@ function playRound(computerChoice, humanChoice){
 }
 
 /* console.log(playRound(getComputerChoice(), getHumanChoice())); */
+
+function playGame (){
+    for (i = 0; i < 5; i++){
+        console.log("hit");
+        console.log(playRound(getComputerChoice(), getHumanChoice()));
+    }
+    console.log("Your score is: " + humanScore);
+    console.log("The computer score is: " + computerScore);
+
+    if (humanScore > computerScore){
+        console.log("Well done, you win the game. Your score: " + humanScore + ". Computer score: " + computerScore +".")
+    } else if (humanScore === computerScore){
+        console.log("You have tied with the computer. Your score: " + humanScore + ". Computer score: " + computerScore +".")
+    } else{
+        console.log("You have lost to a computer. Your score: " + humanScore + ". Computer score: " + computerScore +".")
+    }
+}
+
+playGame();
