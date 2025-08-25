@@ -2,8 +2,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
-
 const displayImg = document.querySelector("#displayImg");
+
 const displayInfo = document.querySelector("#displayInfo");
 const rockButton = document.querySelector("#rockBtn");
 const paperButton = document.querySelector("#paperBtn");
@@ -11,14 +11,35 @@ const scissorsButton = document.querySelector("#scissorsBtn");
 const handsignSection = document.querySelector("#handsigns");
 
 function getHumanChoiceRock(){
+        displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
+        const rockElement = document.createElement('img'); // Create an <img> element
+        rockElement.src = "images/rock.png" // Set the image source
+        rockElement.alt = 'Rock'; 
+        rockElement.width = 100; 
+        displayImg.appendChild(rockElement);
+        displayImg.append("vs");
     return "rock"
 }
 
 function getHumanChoicePaper(){
+    displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
+    const paperElement = document.createElement('img'); // Create an <img> element
+    paperElement.src = "images/paper.png" // Set the image source
+    paperElement.alt = 'paper'; 
+    paperElement.width = 100; 
+    displayImg.appendChild(paperElement);
+    displayImg.append("vs");
     return "paper"
 }
 
 function getHumanChoiceScissors(){
+    displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
+    const scissorsElement = document.createElement('img'); // Create an <img> element
+    scissorsElement.src = "images/scissors.png" // Set the image source
+    scissorsElement.alt = 'scissors'; 
+    scissorsElement.width = 100; 
+    displayImg.appendChild(scissorsElement);
+    displayImg.append("vs");
     return "scissors"
 }
 
@@ -27,13 +48,13 @@ function getComputerChoice () {
     /* Math.random() returns a floating-point random number between 0 and 1*/
     /* Math.floor() rounds the number to the nearest integer */
     let random = Math.floor(Math.random()*3);
-    return list[random];
+    chosenHandSign = list[random]
+    return chosenHandSign;
 }
 
 /* The playround function append 1 to either human score or the computer score 
 depending on which hand sign was chosen for both sides. A tie is also possible.*/
 function playRound(humanChoice, computerChoice){
-
     if (computerChoice === humanChoice){
         displayInfo.textContent = "You have tied this round. Your score against the computer is: " + humanScore + " to " + computerScore;
     } else if ((humanChoice === "rock" && computerChoice === "scissors") || 
