@@ -34,8 +34,8 @@ Depending on which handsign is chosen, the screen shows which is used against th
 
 The game ends if either the player or the computer have reach a score of 5. In this case, the computer has won and the player has lost.
 
-
-
+# Potential Improvements
+The webiste could contain a play again button or a main menu button. Also, the javascript file contains alot of redundant code which could be condensed.
 
 
 
