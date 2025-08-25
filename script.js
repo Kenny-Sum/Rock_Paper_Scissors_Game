@@ -10,6 +10,7 @@ const paperButton = document.querySelector("#paperBtn");
 const scissorsButton = document.querySelector("#scissorsBtn");
 const handsignSection = document.querySelector("#handsigns");
 
+/* getHumanChoiceRock function appends rock image on display and return rock.*/
 function getHumanChoiceRock(){
         displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
         const rockElement = document.createElement('img'); // Create an <img> element
@@ -21,6 +22,7 @@ function getHumanChoiceRock(){
     return "rock"
 }
 
+/* getHumanChoicePaper function appends paper image on display and return paper.*/
 function getHumanChoicePaper(){
     displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
     const paperElement = document.createElement('img'); // Create an <img> element
@@ -32,6 +34,7 @@ function getHumanChoicePaper(){
     return "paper"
 }
 
+/* getHumanChoiceScissors function appends scissors image on display and return scissors.*/
 function getHumanChoiceScissors(){
     displayImg.innerHTML = ""; // Clears all the child elements within displayImg element.
     const scissorsElement = document.createElement('img'); // Create an <img> element
@@ -49,6 +52,25 @@ function getComputerChoice () {
     /* Math.floor() rounds the number to the nearest integer */
     let random = Math.floor(Math.random()*3);
     chosenHandSign = list[random]
+    if (chosenHandSign === "rock"){
+        const rockElement = document.createElement('img'); // Create an <img> element 
+        rockElement.src = "images/rock.png" // Set the image source
+        rockElement.alt = 'Rock'; 
+        rockElement.width = 100; 
+        displayImg.appendChild(rockElement);
+    } else if (chosenHandSign === "paper"){
+        const paperElement = document.createElement('img'); // Create an <img> element
+        paperElement.src = "images/paper.png" // Set the image source
+        paperElement.alt = 'paper'; 
+        paperElement.width = 100; 
+        displayImg.appendChild(paperElement);
+    } else if (chosenHandSign === "scissors"){
+        const scissorsElement = document.createElement('img'); // Create an <img> element
+        scissorsElement.src = "images/scissors.png" // Set the image source
+        scissorsElement.alt = 'scissors'; 
+        scissorsElement.width = 100; 
+        displayImg.appendChild(scissorsElement);
+    }
     return chosenHandSign;
 }
 

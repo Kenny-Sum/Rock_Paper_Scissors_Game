@@ -25,6 +25,7 @@ body {
     align-items: center;
     height: 300px;
     width: 800px;
+    gap: 20px;
 }
 
 #displayInfo {
