@@ -34,9 +34,12 @@ function playRound(computerChoice, humanChoice){
         computerScore += 1
         display.textContent = "You lost this round. Your current score against the computer is: " + humanScore + " to " + computerScore;
     }
-
-
-
+    if (humanScore === 5){
+        display.textContent = "Congrats! You have win against the COmputer. Your current score against the computer is: " + humanScore + " to " + computerScore;
+    }
+    else if (computerScore === 5){
+        display.textContent = "Sorry! You have lost against the COmputer. Your current score against the computer is: " + humanScore + " to " + computerScore;
+    }
 }
 
 function playGame(){
