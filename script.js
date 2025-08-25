@@ -4,13 +4,10 @@ let computerScore = 0;
 const display = document.querySelector("#display");
 
 const rockButton = document.querySelector("#rockBtn");
-rockButton.addEventListener("click", () => playRound(getComputerChoice(), "rock"));
 
 const paperButton = document.querySelector("#paperBtn");
-paperButton.addEventListener("click", () => playRound(getComputerChoice(), "paper"));
 
 const scissorsButton = document.querySelector("#scissorsBtn");
-scissorsButton.addEventListener("click", () => playRound(getComputerChoice(), "scissors"));
 
 function getComputerChoice () {
     const list = ["rock", "paper", "scissors"];
@@ -28,22 +25,25 @@ function getHumanChoice () {
 function playRound(computerChoice, humanChoice){
     if (computerChoice === humanChoice){
         display.textContent = "You have tied this round. Your score against the computer is: " + humanScore + " to " + computerScore;
-        return "It's a tie!"
     } else if ((humanChoice === "rock" && computerChoice === "scissors") || 
         (humanChoice === "scissors" && computerChoice === "paper") || 
         (humanChoice === "paper" && computerChoice === "rock")){
         humanScore += 1
-        display.textContent = "You won this round. Your score against the computer is: " + humanScore + " to " + computerScore;
-        return "You Win!"
+        display.textContent = "You won this round. Your current score against the computer is: " + humanScore + " to " + computerScore;
     } else {
         computerScore += 1
-        display.textContent = "You lost this round. Your score against the computer is: " + humanScore + " to " + computerScore;
-        return "You Lose!"
+        display.textContent = "You lost this round. Your current score against the computer is: " + humanScore + " to " + computerScore;
     }
+
+
+
 }
 
 function playGame(){
-    playRound(getComputerChoice(), getHumanChoice());
+    rockButton.addEventListener("click", () => playRound(getComputerChoice(), "rock"));
+    paperButton.addEventListener("click", () => playRound(getComputerChoice(), "paper"));
+    scissorsButton.addEventListener("click", () => playRound(getComputerChoice(), "scissors"));
+
 
     console.log("Your score is: " + humanScore);
     console.log("The computer score is: " + computerScore);
@@ -55,6 +55,7 @@ function playGame(){
     } else{
         console.log("You have lost to a computer. Your score: " + humanScore + ". Computer score: " + computerScore +".")
     }
+
 }
 
 playGame();
