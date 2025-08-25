@@ -4,4 +4,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 500px;
+    gap: 50px;
+}
+
+#display {
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+button{
+    margin: 10px;
+}
+
+img {
+    height: 100px;
 }
