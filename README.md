@@ -23,10 +23,12 @@ The Main page allows the user to click a button to play the game.
 <img width="1887" height="895" alt="image" src="https://github.com/user-attachments/assets/d9b29588-f863-4b7f-b585-3da579d7cbdd" />
 
 Once the user is within game page, The user can decide which handsign (rock, paper, or scissors) to use against the computer. 
+##
 
 <img width="1867" height="885" alt="image" src="https://github.com/user-attachments/assets/9d2212f7-7010-49fb-b233-748c3b2444e1" />
 
-Depending on which handsign is chosen, the screen shows which is used against the computer and which handsign the computer used against the player. In this case both player and computer have chosen rock which result in a tie
+Depending on which handsign is chosen, the screen shows which is used against the computer and which handsign the computer used against the player. In this case both player and computer have chosen rock which result in a tie.
+##
 
 <img width="1883" height="897" alt="image" src="https://github.com/user-attachments/assets/55bcea8d-b5bf-4826-b396-008edf88a35f" />
 
