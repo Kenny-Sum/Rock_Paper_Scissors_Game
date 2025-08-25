@@ -92,7 +92,7 @@ function playRound(humanChoice, computerChoice){
 
     /* If either score reaches 5 for either the user or the computer, the game ends and a winner is shown.*/
     if (humanScore === 5){
-        display.textContent = "Congrats! You have win against the Computer. Your current score against the computer is: " + humanScore + " to " + computerScore;
+        displayInfo.textContent = "Congrats! You have win against the Computer. Your current score against the computer is: " + humanScore + " to " + computerScore;
         handsignSection.removeChild(rockButton);
         handsignSection.removeChild(paperButton);
         handsignSection.removeChild(scissorsButton);
