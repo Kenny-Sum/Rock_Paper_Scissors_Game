@@ -96,6 +96,7 @@ function playRound(humanChoice, computerChoice){
         handsignSection.removeChild(rockButton);
         handsignSection.removeChild(paperButton);
         handsignSection.removeChild(scissorsButton);
+        
     }
     else if (computerScore === 5){
         displayInfo.textContent = "Sorry! You have lost against the Computer. Your current score against the computer is: " + humanScore + " to " + computerScore;
@@ -114,5 +115,4 @@ function playGame(){
 
 playGame();
 
-/* Further improvements - Replace the first parameter on function playRound() with a another function called humanChoice(), 
-   which allows it to add hand signs to the display in the html.*/
+/* Further improvements - Once game has finished, create button that allows user to play the game again. The javascipt code file also shows repeated code that can be reduced.*/
