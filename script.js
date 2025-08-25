@@ -1,5 +1,7 @@
+/* Sets the score to zero for both human and computer. */
 let humanScore = 0;
 let computerScore = 0;
+
 
 const displayImg = document.querySelector("#displayImg");
 const displayInfo = document.querySelector("#displayInfo");
@@ -16,7 +18,10 @@ function getComputerChoice () {
     return list[random];
 }
 
-function playRound(computerChoice, humanChoice){
+/* The playround function append 1 to either human score or the computer score 
+depending on which hand sign was chosen for both sides. A tie is also possible.*/
+function playRound(humanChoice, computerChoice){
+
     if (computerChoice === humanChoice){
         displayInfo.textContent = "You have tied this round. Your score against the computer is: " + humanScore + " to " + computerScore;
     } else if ((humanChoice === "rock" && computerChoice === "scissors") || 
@@ -29,6 +34,8 @@ function playRound(computerChoice, humanChoice){
         computerScore += 1
         displayInfo.textContent = "You lost this round. Your current score against the computer is: " + humanScore + " to " + computerScore;
     }
+
+    /* If either score reaches 5 for either the user or the computer, the game ends and a winner is shown.*/
     if (humanScore === 5){
         display.textContent = "Congrats! You have win against the Computer. Your current score against the computer is: " + humanScore + " to " + computerScore;
         handsignSection.removeChild(rockButton);
@@ -43,10 +50,11 @@ function playRound(computerChoice, humanChoice){
     }
 }
 
+/* This function allows the user to begin the game and click which button to press (handsign to choose) to compete against the computer. */
 function playGame(){
-    rockButton.addEventListener("click", () => playRound(getComputerChoice(), "rock"));
-    paperButton.addEventListener("click", () => playRound(getComputerChoice(), "paper"));
-    scissorsButton.addEventListener("click", () => playRound(getComputerChoice(), "scissors"));
+    rockButton.addEventListener("click", () => playRound("rock", getComputerChoice()));
+    paperButton.addEventListener("click", () => playRound("paper", getComputerChoice()));
+    scissorsButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 }
 
 playGame();
