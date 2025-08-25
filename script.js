@@ -10,6 +10,18 @@ const paperButton = document.querySelector("#paperBtn");
 const scissorsButton = document.querySelector("#scissorsBtn");
 const handsignSection = document.querySelector("#handsigns");
 
+function getHumanChoiceRock(){
+    return "rock"
+}
+
+function getHumanChoicePaper(){
+    return "paper"
+}
+
+function getHumanChoiceScissors(){
+    return "scissors"
+}
+
 function getComputerChoice () {
     const list = ["rock", "paper", "scissors"];
     /* Math.random() returns a floating-point random number between 0 and 1*/
@@ -52,9 +64,12 @@ function playRound(humanChoice, computerChoice){
 
 /* This function allows the user to begin the game and click which button to press (handsign to choose) to compete against the computer. */
 function playGame(){
-    rockButton.addEventListener("click", () => playRound("rock", getComputerChoice()));
-    paperButton.addEventListener("click", () => playRound("paper", getComputerChoice()));
-    scissorsButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+    rockButton.addEventListener("click", () => playRound(getHumanChoiceRock(), getComputerChoice()));
+    paperButton.addEventListener("click", () => playRound(getHumanChoicePaper(), getComputerChoice()));
+    scissorsButton.addEventListener("click", () => playRound(getHumanChoiceScissors(), getComputerChoice()));
 }
 
 playGame();
+
+/* Further improvements - Replace the first parameter on function playRound() with a another function called humanChoice(), 
+   which allows it to add hand signs to the display in the html.*/
